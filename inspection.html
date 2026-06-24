@@ -1,0 +1,18 @@
+
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Inspection</title>
+<link rel='stylesheet' href='css/style.css'></head>
+<body>
+<h1>New Inspection</h1>
+<div id='app'></div>
+<script src='js/checklist-data.js'></script>
+<script>
+const app=document.getElementById('app');
+checklistData.forEach(c=>{
+ let h=document.createElement('h2');h.textContent=c.category;app.appendChild(h);
+ c.items.forEach(i=>{
+   let d=document.createElement('div');
+   d.innerHTML=`${i.id}. ${i.text} <button>PASS</button> <button>FAIL</button>`;
+   app.appendChild(d);
+ });
+});
+</script></body></html>
